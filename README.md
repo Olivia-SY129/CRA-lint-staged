@@ -2,26 +2,26 @@
 
 ## Apply lint to staged files
 
-1. install Husky
+  1. install Husky
 ```cmd
 npm i -D husky
 ```
-1. install Husky hook
+  2. install Husky hook
 ```cmd
 npx husky install
 ```
-1. in script of package.json, add:
+  3. in script of package.json, add:
 ```json
 "prepare":"husky install"
 ```
 this will reinstall husky hook when you download package again.
 
-1. install lint-staged
+  4. install lint-staged
 ```cmd
 npm i lint-staged -D
 ```
 
-1. in package.json, add file you want to check before commit:
+  5. in package.json, add file you want to check before commit:
 ```json
 "lint-staged": {
   "**/*.js": [
@@ -32,7 +32,7 @@ npm i lint-staged -D
 }
 ```
 
-1. Add hook using npx command
+  6. Add hook using npx command
 ```cmd
 npx husky add .husky/pre-commit "npx lint-staged"
 ```
